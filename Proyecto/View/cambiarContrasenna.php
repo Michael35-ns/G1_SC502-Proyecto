@@ -1,4 +1,3 @@
-<?php include_once '../Controller/usuarioController.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,11 +27,13 @@
                 <h6 class="font-weight-light">Recupera tu contraseña</h6>
                 <form class="pt-3">
                   <div class="form-group">
-                    <input type="email" class="form-control form-control-lg" name="txtCorreo" id="txtCorreo" placeholder="Correo electrónico">
+                    <input type="text" class="form-control form-control-lg" name="txtContrasenna" id="txtContrasenna" placeholder="Contraseña nueva">
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control form-control-lg" id="txtContrasennaVerif" name="txtContrasennaVerif" placeholder="Verificar contraseña nueva">
                   </div>
                   <div class="mt-3">
-                    <button type="submit" id="btnRecuperarAcceso"  name="btnRecuperarAcceso" 
-                    class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">Enviar Correo de recuperación</button>
+                    <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="home.php">Enviar Correo de recuperación</a>
                   </div>
                   <div class="my-2 d-flex justify-content-between align-items-center">
                   <div class="text-center mt-4 font-weight-light">

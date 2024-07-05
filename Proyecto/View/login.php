@@ -1,6 +1,6 @@
+<?php include_once '../Controller/usuarioController.php';?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -8,10 +8,9 @@
   <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="vendors/base/vendor.bundle.base.css">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/arenal.css">
+		<link rel="stylesheet" href="css/arenal.css">
   <link rel="shortcut icon" href="images/favicon.png" />
 </head>
-
 <body>
   <div class="container-scroller">
     <div class="container-fluid page-body-wrapper full-page-wrapper">
@@ -25,29 +24,31 @@
                 </div>
                 <h4>Hello! let's get started</h4>
                 <h6 class="font-weight-light">Sign in to continue.</h6>
-                <form class="pt-3">
+                <br />
+                <?php
+                    if(isset($_POST["msj"]))
+                    {
+                        echo '<div class="alert alert-danger">' . $_POST["msj"] . '</div>';
+                    }
+                ?>
+                <form class="pt-3" action="" method="post">
                   <div class="form-group">
-                    <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username">
+                    <input type="text" class="form-control form-control-lg" id="txtCredencial" name="txtCredencial" placeholder="Username o Email" required>
                   </div>
                   <div class="form-group">
-                    <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
+                    <input type="password" class="form-control form-control-lg" name="txtPassword" id="txtPassword" placeholder="Password" required>
                   </div>
                   <div class="mt-3">
-                    <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="home.php">SIGN IN</a>
+                  <button type="submit" id="btnRegistrarUsuario"  name="btnIniciarSesion" 
+                  class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">Iniciar Sesión</button>  
                   </div>
                   <div class="my-2 d-flex justify-content-between align-items-center">
-
-                    <a href="#" class="auth-link text-black">Forgot password?</a>
+                    <a href="#" class="auth-link text-black">¡Olvidó su contraseña?</a>
                   </div>
-                  <div class="mb-2">
-                    <button type="button" class="btn btn-block btn-facebook auth-form-btn">
-                      <i class="mdi mdi-facebook me-2"></i>Connect using facebook
-                    </button>
+                  <div class="text-center mt-4 font-weight-light">
+                    ¿Aún no tienes una cuenta? <a href="register.php" class="text-primary">Creála</a>
                   </div>
                 </form>
-                <div class="text-center mt-4 font-weight-light">
-                  Don't have an account? <a href="register.php" class="text-primary">Create</a>
-                </div>
               </div>
             </div>
           </div>

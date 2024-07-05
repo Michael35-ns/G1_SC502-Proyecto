@@ -1,1 +1,0 @@
-# G1_SC502-Proyecto

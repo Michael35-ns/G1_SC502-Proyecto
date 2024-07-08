@@ -133,3 +133,18 @@ display: block !important;
     height: 10vh; 
     background: linear-gradient(to bottom, transparent, #f5f6f7); 
 }
+
+.background-arenal {
+    background-image: url('../images/tours-arenal-volcano.jpg'); /* Reemplaza con la ruta de tu imagen */
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.letra-blanca {
+    color: white;
+}
+

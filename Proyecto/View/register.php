@@ -4,26 +4,27 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Kapella Bootstrap Admin Dashboard Template</title>
+  <title>Registro</title>
   <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="vendors/base/vendor.bundle.base.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/arenal.css">
-  <link rel="shortcut icon" href="images/favicon.png" />
+  <link rel="shortcut icon" href="images/AFIcon.png" />
 </head>
 <body>
-  <div class="container-scroller">
-    <div class="container-fluid page-body-wrapper full-page-wrapper">
-      <div class="main-panel">
-        <div class="content-wrapper d-flex align-items-center auth px-0">
+  <div class="container-scroller background-arenal">
+    <div class="container-fluid page-body-wrapper full-page-wrapper background-arenal">
+      <div class="main-panel background-arenal">
+        <div class="content-wrapper d-flex align-items-center auth px-0 background-arenal">
           <div class="row w-100 mx-0">
             <div class="col-lg-4 mx-auto">
-              <div class="auth-form-light text-left py-5 px-4 px-sm-5">
+              <div class="auth-form-light text-left py-5 px-4 px-sm-5 navbar-blur">
                 <div class="brand-logo">
-                  <img src="images/logo.svg" alt="logo">
+                  <img src="images/AFLogoBlanco.svg" alt="logo">
                 </div>
-                <h4>Registrese, es gratis!</h4>
-                <h6 class="font-weight-light">Complete el formulario</h6>
+                <h4 class="letra-blanca">Registrese, es gratis!</h4>
+                <h6 class="font-weight-light letra-blanca">Complete el formulario</h6>
+                <br />
                 <?php
                     if(isset($_POST["msj"]))
                     {
@@ -50,10 +51,10 @@
                   </div>  
                   <div class="mt-3">
                     <button type="submit" id="btnRegistrarUsuario"  name="btnRegistrarUsuario" 
-                    class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">Registrar</button>
+                    class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">Registrarse</button>
                   </div>
-                  <div class="text-center mt-4 font-weight-light">
-                    Already have an account? <a href="login.php" class="text-primary">Login</a>
+                  <div class="text-center mt-4 font-weight-light letra-blanca">
+                    ¿Ya tiene una cuenta? <a href="login.php" class="text-primary">Inicie sesión</a>
                   </div>
                 </form>
               </div>

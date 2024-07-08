@@ -10,8 +10,7 @@
             <ul class="navbar-nav navbar-nav-left">
             </ul>
             <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center" >
-                <a class="navbar-brand brand-logo" href="home.php"><img src="images/log.png" style="width: 70px ; heigth: 70px"  alt="logo"/></a>
-                <a class="navbar-brand brand-logo-mini" href="home.php"><img src="images/log.png" alt="logo"/></a>
+                <a class="navbar-brand brand-logo" href="home.php"><img src="images/AFLogoBlanco.svg" style="width: 120px ; heigth: 100px"  alt="logo"/></a>
             </div>
             <ul class="navbar-nav navbar-nav-right">
                 <li class="nav-item nav-profile dropdown">

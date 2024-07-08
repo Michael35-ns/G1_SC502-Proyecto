@@ -28,4 +28,9 @@ function EnviarCorreo($asunto,$contenido,$destinatario)
     $mail -> send();
 }
 
+function generarToken($lenght = 32)
+{
+    return bin2hex(random_bytes($lenght));
+}
+
 ?>

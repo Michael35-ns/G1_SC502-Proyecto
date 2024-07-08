@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="vendors/base/vendor.bundle.base.css">
     <link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/arenal.css">
-    <link rel="shortcut icon" href="images/favicon.png" />
+    <link rel="shortcut icon" href="images/AFIcon.png" />
   </head>
   <body>
 

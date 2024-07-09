@@ -99,17 +99,6 @@ z-index: 1500;
 display: block !important;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 .container-fluid {
     padding: 0;
 }
@@ -133,3 +122,34 @@ display: block !important;
     height: 10vh; 
     background: linear-gradient(to bottom, transparent, #f5f6f7); 
 }
+
+.background-arenal {
+    background-image: url('../images/tours-arenal-volcano.jpg'); /* Reemplaza con la ruta de tu imagen */
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-body img {
+    display: block;
+    margin: 0 auto;
+    width: 300px; /* establece un ancho fijo */
+    height: 300px; /* establece un alto fijo */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    object-fit: cover; /* hace que la imagen se ajuste al contenedor */
+  }
+  
+  .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  
+  .card {
+    margin: 10px;
+    flex: 0 0 25%; /* ajusta el ancho de cada card */
+  }

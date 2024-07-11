@@ -1,4 +1,4 @@
-<?php include_once '../Model/usuarioModel.php';
+<?php include_once '../../Model/usuarioModel.php';
       include_once 'comunController.php';
 
     if (isset($_POST["btnRegistrarUsuario"])) 
@@ -18,7 +18,7 @@
 
                 if($respuesta == true)
                 {
-                    header("location: ../View/login.php");
+                    header("location: ../Registro-Inicio/login.php");
                 }
                 else  
                 {
@@ -48,7 +48,7 @@
         {
             $datos = mysqli_fetch_array($respuesta);
             $_SESSION["NombreUsuario"] = $datos[2];
-            header("location: ../View/home.php");
+            header("location: ../home.php");
         }
         else  
         {
@@ -71,17 +71,17 @@
             
             if($resultado == true)
             {
-                $enlaceRestablecimiento = "http://localhost/Proyecto/View/cambiarContrasenna.php?token=" . urldecode($Token);
+                $enlaceRestablecimiento = "http://localhost/Proyecto/View/Registro-Inicio/cambiarContrasenna.php?token=" . urldecode($Token);
 
                 $contenido = "<html><body>
-                    Estimado(a) " . $datos["nombre"] . "<br/><br/>
+                    Estimado(a) " . $datos["username"] . "<br/><br/>
                     Por favor ingrese al siguiente enlace: <b>" . $enlaceRestablecimiento . "</b><br/>
                     Recuerde realizar el cambio de contraseña una vez que ingrese a nuestro sistema<br/><br/>
                     Muchas gracias.
                     </body></html>";
 
                 EnviarCorreo('Acceso al Sistema', $contenido, $datos["correo"]);
-                header("location: ../View/login.php");
+                header("location: ../Registro-Inicio/login.php");
             }
             else  
             {
@@ -113,7 +113,7 @@
 
                     if($respuesta == true)
                     {
-                        header("location: ../View/login.php");
+                        header("location: ../Registro-Inicio/login.php");
                     }
                     else  
                     {

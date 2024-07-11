@@ -5,8 +5,8 @@ function EnviarCorreo($asunto,$contenido,$destinatario)
     require 'PHPMailer/src/PHPMailer.php';
     require 'PHPMailer/src/SMTP.php';
 
-    $correoSalida = "clasesphp@outlook.com";
-    $contrasennaSalida = "phpclases2024*";
+    $correoSalida = "";
+    $contrasennaSalida = "";
 
     $mail = new PHPMailer();
     $mail -> CharSet = 'UTF-8';

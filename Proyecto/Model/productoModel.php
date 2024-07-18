@@ -16,10 +16,10 @@
         return $respuesta;
     }
 
-    function RegistrarProducto($Nombre,$Precio,$IdMaterial,$IdCategoria)
+    function RegistrarProducto($Nombre,$Precio,$img)
     {
         $conexion = AbrirBaseDatos();
-        $sentencia = "CALL AgregarProducto('$Nombre','$Precio',$IdMaterial,$IdCategoria)";
+        $sentencia = "CALL AgregarProducto('$Nombre','$Precio','$img')";
         $respuesta = $conexion -> query($sentencia);
         CerrarBaseDatos($conexion);
         return $respuesta;

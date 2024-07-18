@@ -7,7 +7,7 @@ include_once '../../Controller/productoController.php'; ?>
 <body>
   <?php superiorProductos(); ?>
 
-  <button id="add-product-btn" type="button">Agregar producto</button>
+  
 
   <!-- Ventana modal -->
   <div class="modal" id="add-product-modal" style="display: none">

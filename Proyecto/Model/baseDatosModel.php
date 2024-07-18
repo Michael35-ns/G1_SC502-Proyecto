@@ -2,7 +2,7 @@
 
     function AbrirBaseDatos()
     {
-        return mysqli_connect('127.0.0.1:3308', 'root', '', 'arenal_frames_bd');
+        return mysqli_connect('127.0.0.1:3307', 'root', '', 'arenal_frames_db');
     }
 
     function CerrarBaseDatos($conexion)

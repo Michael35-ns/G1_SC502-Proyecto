@@ -1,7 +1,8 @@
-// JavaScript
 const addProductBtn = document.getElementById('add-product-btn');
 const addProductModal = document.getElementById('add-product-modal');
 const addProductSubmit = document.getElementById('add-product-submit');
+const productNameInput = document.getElementById('product-name');
+const productDescriptionInput = document.getElementById('product-description');
 
 addProductBtn.addEventListener('click', () => {
   addProductModal.style.display = 'block';
@@ -16,17 +17,23 @@ addProductModal.addEventListener('click', (e) => {
 addProductSubmit.addEventListener('click', (e) => {
   e.preventDefault();
 
-  // Crea un objeto con los datos del producto
   const productData = {
-    name: document.getElementById('product-name').value,
-    description: document.getElementById('product-description').value,
-    price: document.getElementById('product-price').value,
-    image: document.getElementById('product-image').files[0]
+    name: productNameInput.value,
+    description: productDescriptionInput.value
   };
 
-  // Envía los datos del producto al servidor (o realiza la lógica de negocio aquí)
-  console.log(productData);
+  // Send the data to your controller using AJAX or fetch API
+  fetch('../../Controller/productoController.php', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(productData)
+  })
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error(error));
 
-  // Cierra la ventana modal
+  // Close the modal
   addProductModal.style.display = 'none';
 });

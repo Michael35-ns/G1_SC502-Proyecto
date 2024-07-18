@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `arenal_frames_db` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */;
-USE `arenal_frames_db`;
 -- MySQL dump 10.13  Distrib 8.0.38, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: arenal_frames_db
@@ -75,7 +73,7 @@ DROP TABLE IF EXISTS `producto`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `producto` (
-  `id_producto` int(11) NOT NULL,
+  `id_producto` int(11) NOT NULL AUTO_INCREMENT,
   `nombre_producto` varchar(30) DEFAULT NULL,
   `precio` double DEFAULT NULL,
   `id_material` int(11) DEFAULT NULL,
@@ -86,7 +84,7 @@ CREATE TABLE `producto` (
   KEY `id_categoria` (`id_categoria`),
   CONSTRAINT `producto_ibfk_1` FOREIGN KEY (`id_material`) REFERENCES `material` (`id_material`),
   CONSTRAINT `producto_ibfk_2` FOREIGN KEY (`id_categoria`) REFERENCES `categoria` (`id_categoria`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -95,7 +93,7 @@ CREATE TABLE `producto` (
 
 LOCK TABLES `producto` WRITE;
 /*!40000 ALTER TABLE `producto` DISABLE KEYS */;
-INSERT INTO `producto` VALUES (1,'Figuritas 3D',10500,1,1,'https://formlabs-media.formlabs.com/filer_public_thumbnails/filer_public/7f/5b/7f5b317f-32a8-455d-ab8b-dd904b8929bd/optimized_for_web_jpeg-07192020_3l_prints_282_1s.jpg__1354x0_q85_subsampling-2.jpg'),(2,'Iron Man 3D',20500,1,1,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-OuTRdsjlh2v_pxFyLZ7tUk8WHDYzBsXnKg&s'),(4,'a',1,1,1,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStrU51aY0aO_98H39VgG770OrtJWZZs4TkAA&s');
+INSERT INTO `producto` VALUES (1,'Figuritas 3D',10500,1,1,'https://formlabs-media.formlabs.com/filer_public_thumbnails/filer_public/7f/5b/7f5b317f-32a8-455d-ab8b-dd904b8929bd/optimized_for_web_jpeg-07192020_3l_prints_282_1s.jpg__1354x0_q85_subsampling-2.jpg'),(2,'Iron Man 3D',20500,1,1,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-OuTRdsjlh2v_pxFyLZ7tUk8WHDYzBsXnKg&s'),(5,'Batman 3D',10500,1,1,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZnRD_O3VADN1boH37cmleyNKdZRzmTnEGlKcxRY6VwHAKjW7XVZ_HfD98_IFLsbWZ6bw&usqp=CAU'),(6,'Dodge Hellcat',5500,1,1,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRu7fBnM9oDIIPq820FR2JSmhpeM9-K_QYBXg&s');
 /*!40000 ALTER TABLE `producto` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -225,8 +223,8 @@ DELIMITER ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `AgregarProducto`(pNombre varchar(30), pPrecio int, pimagen varchar(1699))
 BEGIN
-    INSERT INTO producto (id_producto,nombre_producto, precio, id_material, id_categoria, url_img)
-    VALUES (4,pNombre, pPrecio, 1, 1,pimagen);
+    INSERT INTO producto (nombre_producto, precio, id_material, id_categoria, url_img)
+    VALUES (pNombre, pPrecio, 1, 1,pimagen);
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -404,4 +402,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-07-17  0:21:59
+-- Dump completed on 2024-07-18 10:49:24

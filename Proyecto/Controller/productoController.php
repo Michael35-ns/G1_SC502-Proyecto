@@ -31,13 +31,14 @@ function ConsultarProductos($idCategoria)
             echo '<img src="' . $row["url_img"] . '" alt="' . $row["nombre_producto"] . '" class="imagen-producto">';
             echo '<div class="text-center">';
             echo '<br />';
-            echo ' <button type="button" class="btn btn-warning AbrirModal" id="btnAbrirModalProductos" data-toggle="modal" data-target="#ModalUsuarios" 
+            echo ' <button type="button" class="btn btn-outline-dark  AbrirModal" id="btnAbrirModalProductos" data-toggle="modal" data-target="#ModalUsuarios" 
             data-id=' . $row["id_producto"] . ' data-name="' . $row["nombre_producto"] . '">
                 <i class="fa fa-edit"></i>
             </button>
-            <a href="actualizarUsuario.php" class="btn btn-danger">
-                <i class="fa fa-user"></i>
-                  </a>';
+            <a href="actualizarUsuario.php" class="btn btn-outline-primary flex">
+                <i class="mdi mdi-cart"></i></a>';
+            echo' <a href="actualizarUsuario.php" class="btn btn-outline-danger flex  ">
+                <i class="fa fa-trash"></i></a>';
             echo '</div>'; // Cerrar el div text-center
             echo '</div>'; // Cerrar el div card-body
             echo '</div>'; // Cerrar el div card

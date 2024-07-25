@@ -3,10 +3,10 @@ ob_start();
 include_once '../layout.php';
 include_once '../../Controller/productoController.php';
 include_once '../../Controller/categoriaController.php'; 
+$datos = ConsultarProducto($_GET["q"]);
 $opcionesCategorias = ObtenerOpcionesCategorias();
 $opcionesMaterial = ObtenerOpcionesMaterial();
-ob_end_flush();
-?>
+ob_end_flush();?>
 <!DOCTYPE html>
 <html lang="en">
 <?php HeadCSS(); ?>
@@ -21,30 +21,31 @@ ob_end_flush();
                     <div class="col-md-12 grid-margin stretch-card">
                         <div class="card">
                             <div class="card-body">
-                                <h2 class="heading text-danger  text-center font-weight-bold">Agregar Productos</h2>
+                                <h2 class="heading text-danger  text-center font-weight-bold">Editar Productos</h2>
                                 <br />
                                 <form class="forms-sample" action="" method="post">
+                                <input id="txtIdProducto" name="txtIdProducto" type="hidden" value="<?php echo $datos["id_producto"] ?>">
                                     <div class="form-group">
                                         <label class="text-dark font-weight-bold">Nombre del producto</label>
-                                        <input type="text" class="form-control" name="txtNombreProducto" placeholder="Ingrese el nombre del producto">
+                                        <input type="text" class="form-control" name="txtNombreProducto" value="<?php echo $datos["nombre_producto"] ?>">
                                     </div>
                                     <div class="form-group">
                                         <label class="text-dark font-weight-bold">Precio del producto</label>
-                                        <input type="number" name="txtPrecio" class="form-control" id="exampleInputEmail1" placeholder="Ingrese el precio del producto">
+                                        <input type="number" name="txtPrecio" class="form-control" id="txtPrecio" value="<?php echo $datos["precio"] ?>">
                                     </div>
                                     <div class="form-group">
                                         <label class="text-dark font-weight-bold">Imagen del producto</label>
-                                        <input type="text" name="txtUrl" class="form-control" id="exampleInputEmail1" placeholder="Ingrese el precio del producto">
+                                        <input type="text" name="txtUrl" class="form-control" id="txtUrl" value="<?php echo $datos["url_img"] ?>">
                                     </div>
                                     <div class="form-group">
                                             <label class="text-dark font-weight-bold">Categoria del producto</label>
-                                            <select id="cboCategoria" name="cboCategoria" class="form-control" required>
+                                            <select id="selectCategoria" name="cboCategoria" class="form-control" required>
                                             <?php echo $opcionesCategorias; ?>
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                            <label class="text-dark font-weight-bold">Material del producto</label>
-                                            <select id="cboMaterial" name="cboMaterial" class="form-control" required>
+                                            <label class="text-dark font-weight-bold">Categoria del producto</label>
+                                            <select id="selectCategoria" name="cboMaterial" class="form-control" required>
                                             <?php echo $opcionesMaterial; ?>
                                         </select>
                                     </div>
@@ -52,7 +53,7 @@ ob_end_flush();
                                         <label class="text-dark font-weight-bold">Existencias producto</label>
                                         <input type="number" name="txtExistencias" class="form-control" id="exampleInputEmail1" placeholder="Ingrese las existencias del producto">
                                     </div>
-                                    <button name="btnAgregarProducto" type="submit" class="btn btn-inverse-primary me-2">Submit</button>
+                                    <button name="btnEditarProducto" type="submit" class="btn btn-inverse-primary me-2">Submit</button>
                                 </form>
                             </div>
                         </div>

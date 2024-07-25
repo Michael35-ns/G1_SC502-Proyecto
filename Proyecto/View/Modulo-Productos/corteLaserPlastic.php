@@ -8,8 +8,7 @@ include_once '../../Controller/productoController.php';
 
 <body>
     <?php superiorProductos(); ?>
-    <a href="agregarProducto.php"><button type="submit" id="btnRegistrarUsuario" name="btnIniciarSesion" 
-    class="btn btn-block btn-outline-primary btn-md font-weight-bold auth-form-btn ">Agregar producto</button></a>
+
     <?php ConsultarProductos(2); ?>
     <?php bajo(); ?>
 

@@ -6,6 +6,51 @@
     -webkit-box-shadow: none;
 }
 
+.navbar-blur2 {
+    backdrop-filter: blur(15px) !important;
+    background: rgba(255, 255, 255, 0.733) !important;  /* Fondo blanco semitransparente */
+    border: 2px solid rgba(255, 255, 255, 0.18) !important;
+    box-shadow: 0px 0px 15px rgba(227, 228, 237, 0.37) !important;
+    -webkit-box-shadow: none !important;
+    color: #000000; /* Texto blanco para mejor visibilidad */
+}
+
+.body-background {
+    background-color: #000000;
+}
+
+.modal {
+    backdrop-filter: blur(10px) !important;
+    background-color: rgba(255, 255, 255, 0) !important;
+}
+
+.fade{
+    opacity: 1;
+    transition: opacity 0.50s linear !important;
+}
+
+.dropdown-menu{
+    border-radius: 10px !important;
+    backdrop-filter: blur(10px) !important;
+    background-color: transparent !important;
+    border: 2px solid rgba(255, 255, 255, 0.18) !important;
+    box-shadow: 0px 0px 15px rgba(227, 228, 237, 0.37) !important;
+}
+
+.dropdown-item{
+    border-radius: 10px !important;
+    backdrop-filter: blur(10px) !important;
+    background-color: transparent !important;
+    border: 2px solid rgba(255, 255, 255, 0.18) !important;
+    box-shadow: 0px 0px 15px rgba(227, 228, 237, 0.37) !important;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out !important;
+}
+
+.menu-icon{
+  transition: transform 1s ease !important;
+}
+
+
 .bd-placeholder-img {
     font-size: 1.125rem;
     text-anchor: middle;
@@ -99,6 +144,16 @@ z-index: 1500;
 display: block !important;
 }
 
+
+
+
+
+
+
+
+
+
+
 .container-fluid {
     padding: 0;
 }
@@ -133,74 +188,17 @@ display: block !important;
     align-items: center;
 }
 
-.card-body img {
-    display: block;
-    margin: 0 auto;
-    width: 300px; /* establece un ancho fijo */
-    height: 300px; /* establece un alto fijo */
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    object-fit: cover; /* hace que la imagen se ajuste al contenedor */
-  }
-  
-  .cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-  }
-  
-  .card {
-    margin: 10px;
-    flex: 0 0 25%; /* ajusta el ancho de cada card */
-  }
-
-/* Estilos para la ventana modal */
-
-  
-  .modal {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-  
-  .modal-content {
-    background-color: #f9f9f9;
-    margin: 30px auto;
-    padding: 20px;
-    border: 1px solid #888;
-    max-width: 600px;
-    max-height: 600px; /* Agrega una altura máxima de 300px */
-    overflow-y: auto; /* Agrega una barra de desplazamiento vertical si el contenido es demasiado largo */
-    top: 20%; /* Centra la ventana modal verticalmente */
-
-    margin: 0 auto;
-    text-align: center;
-  }
-  /* Estilos para el botón de agregar producto */
-  #add-product-btn {
-    background-color: #1ec2db;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  #add-product-btn:hover {
-    background-color: #0082e0;
-  }
-
-
-  .letra-tamanno{
-    font-size: large;
-  }
-
-  .letra-blanca{
+.letra-blanca {
     color: white;
-  }
+}
+
+.card-category{
+    width: 500px !important;
+    height: 400px !important;
+}
+
+/* Para hacer los iconos grandes */
+.icon-lg {
+    font-size: 4rem !important;
+}
+

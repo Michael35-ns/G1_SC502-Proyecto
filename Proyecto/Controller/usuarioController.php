@@ -1,5 +1,9 @@
-<?php include_once '../../Model/usuarioModel.php';
+<?php include_once '../Model/usuarioModel.php';
       include_once 'comunController.php';
+      
+    if(session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
 
     if (isset($_POST["btnRegistrarUsuario"])) 
     {
@@ -18,7 +22,7 @@
 
                 if($respuesta == true)
                 {
-                    header("location: ../Registro-Inicio/login.php");
+                    header("location: ../View/login.php");
                 }
                 else  
                 {
@@ -47,8 +51,10 @@
         if($respuesta->num_rows > 0)
         {
             $datos = mysqli_fetch_array($respuesta);
-            $_SESSION["NombreUsuario"] = $datos[2];
-            header("location: ../home.php");
+            $_SESSION["nombreUsuario"] = $datos["nombre"];
+            $_SESSION["IdUsuario"] = $datos["id_usuario"];
+            $_SESSION["RolUsuario"] = $datos["id_rol"];
+            header("location: ../View/home.php");
         }
         else  
         {
@@ -71,17 +77,17 @@
             
             if($resultado == true)
             {
-                $enlaceRestablecimiento = "http://localhost/Proyecto/View/Registro-Inicio/cambiarContrasenna.php?token=" . urldecode($Token);
+                $enlaceRestablecimiento = "http://localhost/Proyecto/View/cambiarContrasenna.php?token=" . urldecode($Token);
 
                 $contenido = "<html><body>
-                    Estimado(a) " . $datos["username"] . "<br/><br/>
+                    Estimado(a) " . $datos["nombre"] . "<br/><br/>
                     Por favor ingrese al siguiente enlace: <b>" . $enlaceRestablecimiento . "</b><br/>
                     Recuerde realizar el cambio de contraseña una vez que ingrese a nuestro sistema<br/><br/>
                     Muchas gracias.
                     </body></html>";
 
                 EnviarCorreo('Acceso al Sistema', $contenido, $datos["correo"]);
-                header("location: ../Registro-Inicio/login.php");
+                header("location: ../View/login.php");
             }
             else  
             {
@@ -113,7 +119,7 @@
 
                     if($respuesta == true)
                     {
-                        header("location: ../Registro-Inicio/login.php");
+                        header("location: ../View/login.php");
                     }
                     else  
                     {
@@ -134,3 +140,91 @@
         }
     }
 
+    function ConsultarUsuarios()
+    {
+        $ConsecutivoLogueado = $_SESSION["IdUsuario"];
+        $respuesta = ConsultarUsuariosBD($ConsecutivoLogueado);
+
+        if($respuesta -> num_rows > 0)
+        {
+            while ($row = mysqli_fetch_array($respuesta)) 
+            { 
+                echo "<tr>";
+                echo "<td>" . $row["nombre"] . "</td>";
+                echo "<td>" . $row["correo"] . "</td>";
+                echo "<td>" . $row["NombreEstado"] . "</td>";
+                echo "<td>" . $row["nombre_rol"] . "</td>";
+                echo '<td>
+                        <button type="button" class="btn btn-inverse-danger btn-md font-weight-medium btn-rounded AbrirModal" data-toggle="modal" data-target="#ModalUsuarios" 
+                        data-id=' . $row["id_usuario"] . ' data-name="' . $row["nombre"] . '">
+                            <label>Cambiar estado</label>
+                            <i class="mdi mdi-pen"></i>
+                        </button>
+
+                        <a href="mostrarFacturas.php" class="btn btn-inverse-info btn-md font-weight-medium btn-rounded">
+                            <label>Facturas</label>
+                            <i class="mdi mdi-clipboard-text"></i>
+                        </a>
+
+                     </td>';
+                echo "</tr>";
+            }
+        }
+    }
+
+    function ConsultarUsuario($Consecutivo)
+    {
+        $respuesta = ConsultarUsuarioBD($Consecutivo);
+        if($respuesta -> num_rows > 0)
+        {
+            return mysqli_fetch_array($respuesta);
+        }
+    }
+
+    if(isset($_POST["btnActualizarUsuario"]))
+    {
+        $IdUsuario = $_POST["txtIdUsuario"];
+        $Nombre = $_POST["txtNombre"];
+        $Correo = $_POST["txtCorreo"];
+        $Username = $_POST["txtUsername"];
+
+        $respuesta = ActualizarUsuario($IdUsuario,$Nombre,$Correo,$Username);
+        if($respuesta == true)
+                {
+                    header("location: ../View/home.php");
+                    $_SESSION["nombreUsuario"] = $Nombre;
+                }
+                else  
+                {
+                    $_POST["msj"] = "Su información no se ha registrado correctamente.";
+                }
+    }
+
+    if(isset($_POST["btnCerrarSesion"]))
+    {
+        session_destroy();
+        header("location: ../View/login.php");
+    }
+
+    if(isset($_POST["btnCambiarEstadoUsuario"]))
+    {
+        $Consecutivo = $_POST["IdUsuario"];
+        $respuesta = CambiarEstadoUsuario($Consecutivo);
+
+        if($respuesta == true)
+        {
+            header("location: ../View/consultarUsuarios.php");
+        }
+        else
+        {
+            $_POST["msj"] = "No se ha podido inactivar la información del usuario.";
+        }
+    }
+
+    function ValidarAdmin(){
+        if($_SESSION["RolUsuario"] != 2) {
+            header("location: ../View/home.php");
+        }
+    }
+
+?>

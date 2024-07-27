@@ -1,4 +1,5 @@
-<?php include_once '../Model/usuarioModel.php';
+<?php include_once __DIR__ . '/../Model/usuarioModel.php';
+
       include_once 'comunController.php';
       
     if(session_status() === PHP_SESSION_NONE) {
@@ -22,7 +23,7 @@
 
                 if($respuesta == true)
                 {
-                    header("location: ../View/login.php");
+                    header("location: ../Registro-Inicio/login.php");
                 }
                 else  
                 {
@@ -54,7 +55,7 @@
             $_SESSION["nombreUsuario"] = $datos["nombre"];
             $_SESSION["IdUsuario"] = $datos["id_usuario"];
             $_SESSION["RolUsuario"] = $datos["id_rol"];
-            header("location: ../View/home.php");
+            header("location: ../home.php");
         }
         else  
         {
@@ -77,7 +78,7 @@
             
             if($resultado == true)
             {
-                $enlaceRestablecimiento = "http://localhost/Proyecto/View/cambiarContrasenna.php?token=" . urldecode($Token);
+                $enlaceRestablecimiento = "http://localhost/Proyecto/View/Registro-Inicio/cambiarContrasenna.php?token=" . urldecode($Token);
 
                 $contenido = "<html><body>
                     Estimado(a) " . $datos["nombre"] . "<br/><br/>
@@ -87,7 +88,7 @@
                     </body></html>";
 
                 EnviarCorreo('Acceso al Sistema', $contenido, $datos["correo"]);
-                header("location: ../View/login.php");
+                header("location: ../Registro-Inicio/login.php");
             }
             else  
             {
@@ -119,7 +120,7 @@
 
                     if($respuesta == true)
                     {
-                        header("location: ../View/login.php");
+                        header("location: ../Registro-Inicio/login.php");
                     }
                     else  
                     {
@@ -203,7 +204,7 @@
     if(isset($_POST["btnCerrarSesion"]))
     {
         session_destroy();
-        header("location: ../View/login.php");
+        header("location: /Proyecto/View/Registro-Inicio/login.php");
     }
 
     if(isset($_POST["btnCambiarEstadoUsuario"]))
@@ -213,7 +214,7 @@
 
         if($respuesta == true)
         {
-            header("location: ../View/consultarUsuarios.php");
+            header("location: ../Registro-Inicio/consultarUsuarios.php");
         }
         else
         {
@@ -222,8 +223,8 @@
     }
 
     function ValidarAdmin(){
-        if($_SESSION["RolUsuario"] != 2) {
-            header("location: ../View/home.php");
+        if($_SESSION["RolUsuario"] != 1) {
+            header("location: /Proyecto/View/home.php");
         }
     }
 

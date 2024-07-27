@@ -1,83 +1,83 @@
 .navbar-blur{
-    backdrop-filter: blur(15px);
-    background: none !important;
-    border: 2px solid rgba(255, 255, 255, 0.18) !important;
-    box-shadow: 0px 0px 15px rgba(227, 228, 237, 0.37) !important;
-    -webkit-box-shadow: none;
+  backdrop-filter: blur(15px);
+  background: none !important;
+  border: 2px solid rgba(255, 255, 255, 0.18) !important;
+  box-shadow: 0px 0px 15px rgba(227, 228, 237, 0.37) !important;
+  -webkit-box-shadow: none;
 }
 
 .navbar-blur2 {
-    backdrop-filter: blur(15px) !important;
-    background: rgba(255, 255, 255, 0.733) !important;  /* Fondo blanco semitransparente */
-    border: 2px solid rgba(255, 255, 255, 0.18) !important;
-    box-shadow: 0px 0px 15px rgba(227, 228, 237, 0.37) !important;
-    -webkit-box-shadow: none !important;
-    color: #000000; /* Texto blanco para mejor visibilidad */
+  backdrop-filter: blur(15px) !important;
+  background: rgba(255, 255, 255, 0.733) !important;  /* Fondo blanco semitransparente */
+  border: 2px solid rgba(255, 255, 255, 0.18) !important;
+  box-shadow: 0px 0px 15px rgba(227, 228, 237, 0.37) !important;
+  -webkit-box-shadow: none !important;
+  color: #000000; /* Texto blanco para mejor visibilidad */
 }
 
 .body-background {
-    background-color: #000000;
+  background-color: #000000;
 }
 
 .modal {
-    backdrop-filter: blur(10px) !important;
-    background-color: rgba(255, 255, 255, 0) !important;
+  backdrop-filter: blur(10px) !important;
+  background-color: rgba(255, 255, 255, 0) !important;
 }
 
 .fade{
-    opacity: 1;
-    transition: opacity 0.50s linear !important;
+  opacity: 1;
+  transition: opacity 0.50s linear !important;
 }
 
 .dropdown-menu{
-    border-radius: 10px !important;
-    backdrop-filter: blur(10px) !important;
-    background-color: transparent !important;
-    border: 2px solid rgba(255, 255, 255, 0.18) !important;
-    box-shadow: 0px 0px 15px rgba(227, 228, 237, 0.37) !important;
+  border-radius: 10px !important;
+  backdrop-filter: blur(10px) !important;
+  background-color: transparent !important;
+  border: 2px solid rgba(255, 255, 255, 0.18) !important;
+  box-shadow: 0px 0px 15px rgba(227, 228, 237, 0.37) !important;
 }
 
 .dropdown-item{
-    border-radius: 10px !important;
-    backdrop-filter: blur(10px) !important;
-    background-color: transparent !important;
-    border: 2px solid rgba(255, 255, 255, 0.18) !important;
-    box-shadow: 0px 0px 15px rgba(227, 228, 237, 0.37) !important;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out !important;
+  border-radius: 10px !important;
+  backdrop-filter: blur(10px) !important;
+  background-color: transparent !important;
+  border: 2px solid rgba(255, 255, 255, 0.18) !important;
+  box-shadow: 0px 0px 15px rgba(227, 228, 237, 0.37) !important;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out !important;
 }
 
 .menu-icon{
-  transition: transform 1s ease !important;
+transition: transform 1s ease !important;
 }
 
 
 .bd-placeholder-img {
-    font-size: 1.125rem;
-    text-anchor: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
 
 @media (min-width: 768px) {
-    .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-    }
+  .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+  }
 }
 
 .image-container {
-    position: relative;
-    width: 100%;
-    padding-bottom: 100%; 
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%; 
+  overflow: hidden;
 }
 .image-container img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 
@@ -144,61 +144,66 @@ z-index: 1500;
 display: block !important;
 }
 
-
-
-
-
-
-
-
-
-
-
 .container-fluid {
-    padding: 0;
+  padding: 0;
 }
 .fuse-bottom {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 50vh;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 50vh;
 }
 .fuse-bottom img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .fuse-bottom::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 10vh; 
-    background: linear-gradient(to bottom, transparent, #f5f6f7); 
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 10vh; 
+  background: linear-gradient(to bottom, transparent, #f5f6f7); 
 }
 
 .background-arenal {
-    background-image: url('../images/tours-arenal-volcano.jpg'); /* Reemplaza con la ruta de tu imagen */
-    background-size: cover;
-    background-position: center;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background-image: url('../images/tours-arenal-volcano.jpg'); /* Reemplaza con la ruta de tu imagen */
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .letra-blanca {
-    color: white;
+  color: white;
 }
 
 .card-category{
-    width: 500px !important;
-    height: 400px !important;
+  width: 500px !important;
+  height: 400px !important;
 }
 
 /* Para hacer los iconos grandes */
 .icon-lg {
-    font-size: 4rem !important;
+  font-size: 4rem !important;
 }
 
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  margin-bottom: 20px;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 250px; /* Establecer una altura fija */
+  object-fit: cover; /* Ajustar la imagen sin distorsionar */
+}

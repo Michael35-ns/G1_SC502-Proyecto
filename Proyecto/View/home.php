@@ -19,14 +19,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="shortcut icon" href="images/log.png" />
   </head>
-  <body>
+  <body class="body-icons">
 
   <!--LLamado al layout-->
 		<?php 
 		superior()
 		?>
 
-<?php if($_SESSION["RolUsuario"] == 2) 
+<?php if($_SESSION["RolUsuario"] == 1) 
                 { echo '
 <section class="py-5 overflow-hidden">
       <div class="container-fluid">
@@ -47,7 +47,7 @@
             
             <div class="category-carousel swiper">
               <div class="swiper-wrapper">
-                <a href="consultarUsuarios.php" class="nav-link navbar-blur2 category-item swiper-slide">
+                <a href="Registro-Inicio/consultarUsuarios.php" class="nav-link navbar-blur2 category-item swiper-slide">
                 <i class="mdi mdi-account icon-lg"></i>
                   <h3 class="category-title">Usuarios</h3>
                 </a>

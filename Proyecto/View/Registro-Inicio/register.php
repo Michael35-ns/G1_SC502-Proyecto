@@ -1,15 +1,15 @@
-<?php include_once '../Controller/usuarioController.php';?>
+<?php include_once '../../Controller/usuarioController.php';?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Registro</title>
-  <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
-  <link rel="stylesheet" href="vendors/base/vendor.bundle.base.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/arenal.css">
-  <link rel="shortcut icon" href="images/AFIcon.png" />
+  <link rel="stylesheet" href="../vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="../vendors/base/vendor.bundle.base.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/arenal.css">
+  <link rel="shortcut icon" href="../images/AFIcon.png" />
 </head>
 <body>
   <div class="container-scroller background-arenal">
@@ -20,7 +20,7 @@
             <div class="col-lg-4 mx-auto">
               <div class="auth-form-light text-left py-5 px-4 px-sm-5 navbar-blur">
                 <div class="brand-logo">
-                  <img src="images/AFLogoBlanco.svg" alt="logo">
+                  <img src="../images/AFLogoBlanco.svg" alt="logo">
                 </div>
                 <h4 class="letra-blanca">Registrese, es gratis!</h4>
                 <h6 class="font-weight-light letra-blanca">Complete el formulario</h6>

@@ -27,7 +27,7 @@
 <?php 
 		superior()
 		?>  
-<div class="col-12 fuse-bottom">
+<div class="fuse-bottom">
       <img src="images/about/VideoCapture_20240405-150619.jpg" class="img-fluid" alt="Descripción de la imagen">
     </div><!-- /.row -->
   <div class="container marketing">

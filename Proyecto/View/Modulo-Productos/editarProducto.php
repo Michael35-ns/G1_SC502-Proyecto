@@ -9,6 +9,7 @@ $opcionesMaterial = ObtenerOpcionesMaterial();
 ob_end_flush();?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -24,6 +25,7 @@ ob_end_flush();?>
 <body>
 
     <?php superior(); ?>
+
     <div class="container-fluid page-body-wrapper" style="height: 100vh; display: flex; justify-content: center; align-items: center;">
         <div class="main-panel" style="max-width: 500px; margin: 0 auto;">
             <div class="content-wrapper">

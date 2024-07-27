@@ -17,8 +17,8 @@ include_once '../../Controller/usuarioController.php'; ?>
 </head>
 
 <body>
-  <?php superior(); ?>
 
+  <?php superior(); ?>
 
 
   <!-- Ventana modal -->

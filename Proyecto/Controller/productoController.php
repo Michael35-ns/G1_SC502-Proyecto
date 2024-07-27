@@ -7,6 +7,7 @@ echo '<style>' . $css . '</style>';
 function ConsultarProductos($idCategoria)
 {
     $respuesta = ProductosXCategoria($idCategoria);
+
     echo '<a href="agregarProducto.php">
             <button type="submit" id="btnRegistrarUsuario" name="btnIniciarSesion" class="btn btn-block btn-outline-primary btn-md font-weight-bold auth-form-btn">
                 Agregar producto
@@ -16,6 +17,7 @@ function ConsultarProductos($idCategoria)
     if ($respuesta->num_rows > 0) {
         echo'<br/>';
         echo '<div class="row">';
+      
         while ($row = mysqli_fetch_array($respuesta)) {
             echo '<div class="col-md-3 mb-3">'; 
             echo '<div class="card h-100">'; 
@@ -96,4 +98,3 @@ if (isset($_POST["btnEditarProducto"])) {
         header("Location: ../Modulo-Productos/productos.php");
         exit();
     }
-}

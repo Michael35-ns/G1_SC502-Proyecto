@@ -1,3 +1,4 @@
+
 <?php
 ob_start();
 include_once '../layout.php';
@@ -51,12 +52,15 @@ $datos = ConsultarUsuario($_SESSION["IdUsuario"]);
                                         <input type="text" name="txtUrl" class="form-control" id="exampleInputEmail1" placeholder="Ingrese el precio del producto">
                                     </div>
                                     <div class="form-group">
+
                                         <label class="text-dark font-weight-bold">Categoria del producto</label>
                                         <select id="cboCategoria" name="cboCategoria" class="form-control" required>
+
                                             <?php echo $opcionesCategorias; ?>
                                         </select>
                                     </div>
                                     <div class="form-group">
+
                                         <label class="text-dark font-weight-bold">Material del producto</label>
                                         <select id="cboMaterial" name="cboMaterial" class="form-control" required>
                                             <?php echo $opcionesMaterial; ?>

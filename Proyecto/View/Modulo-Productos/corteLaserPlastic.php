@@ -19,6 +19,7 @@ include_once '../../Controller/productoController.php';
 <body>
     <?php superior(); ?>
 
+
     <?php ConsultarProductos(2); ?>
     <?php bajo(); ?>
 

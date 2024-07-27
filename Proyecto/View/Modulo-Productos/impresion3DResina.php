@@ -19,8 +19,6 @@ include_once '../../Controller/usuarioController.php'; ?>
     <?php superior(); ?>
 
 
-
-
     <?php ConsultarProductos(3); ?>
 
     <?php bajo(); ?>

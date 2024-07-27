@@ -7,36 +7,44 @@ echo '<style>' . $css . '</style>';
 function ConsultarProductos($idCategoria)
 {
     $respuesta = ProductosXCategoria($idCategoria);
-    echo '  <a href="agregarProducto.php"><button type="submit" id="btnRegistrarUsuario" name="btnIniciarSesion" 
-  class="btn btn-block btn-outline-primary btn-md font-weight-bold auth-form-btn ">Agregar producto</button></a>';
-    if ($respuesta->num_rows > 0) {
 
-        echo '<div class="cards-container">';
+    echo '<a href="agregarProducto.php">
+            <button type="submit" id="btnRegistrarUsuario" name="btnIniciarSesion" class="btn btn-block btn-outline-primary btn-md font-weight-bold auth-form-btn">
+                Agregar producto
+            </button>
+          </a>';
+    echo'<br/>';
+    if ($respuesta->num_rows > 0) {
+        echo'<br/>';
+        echo '<div class="row">';
+      
         while ($row = mysqli_fetch_array($respuesta)) {
-            echo '<div class="col-md-3">';
-            echo '<div class="card">';
+            echo '<div class="col-md-3 mb-3">'; 
+            echo '<div class="card h-100">'; 
+            echo '<img src="' . $row["url_img"] . '" alt="' . $row["nombre_producto"] . '" class="card-img-top imagen-producto">'; // Mover la imagen aquí
             echo '<div class="card-body">';
             echo '<h5 class="card-title">' . $row["nombre_producto"] . '</h5>';
             echo '<p class="card-text">Precio: ₡ ' . number_format($row["precio"], 0, ',', '.') . '</p>';
-            echo '<p class="card-text">Existencias: ' .$row["existencias"]. ' unidades </p>';
-            echo '<img src="' . $row["url_img"] . '" alt="' . $row["nombre_producto"] . '" class="imagen-producto">';
-            echo '<div class="text-center">';
-            echo '<br />';
-            echo ' <a href="editarProducto.php?q=' . $row["id_producto"] . '" class="btn btn-outline-dark flex">
-                <i class="fas fa-edit"></i></a>
-            <a href="actualizarUsuario.php" class="btn btn-outline-primary flex">
-                <i class="mdi mdi-cart"></i></a>';
-            echo ' <a href="actualizarUsuario.php" class="btn btn-outline-danger flex  ">
-                <i class="fa fa-trash"></i></a>';
-            echo '</div>'; // Cerrar el div text-center
-            echo '</div>'; // Cerrar el div card-body
-            echo '</div>'; // Cerrar el div card
-            echo '</div>'; // Cerrar el div col-md-3
-            echo '<br />';
+            echo '<p class="card-text">Existencias: ' . $row["existencias"] . ' unidades</p>';
+            echo '</div>'; 
+            echo '<div class="card-footer text-center">';
+            echo '<a href="editarProducto.php?q=' . $row["id_producto"] . '" class="btn btn-outline-dark mx-1">
+                    <i class="mdi mdi-table-edit"></i>
+                  </a>';
+            echo '<a href="#" class="btn btn-outline-primary mx-1">
+                    <i class="mdi mdi-cart"></i>
+                  </a>';
+            echo '<a href="#" class="btn btn-outline-danger mx-1">
+                    <i class="mdi mdi-delete-sweep"></i>
+                  </a>';
+            echo '</div>'; 
+            echo '</div>'; 
+            echo '</div>';
         }
-        echo '</div>'; // Cerrar el div cards-container
+        echo '</div>'; 
     }
 }
+
 
 function VistaProductos()
 {
@@ -90,5 +98,3 @@ if (isset($_POST["btnEditarProducto"])) {
         header("Location: ../Modulo-Productos/productos.php");
         exit();
     }
-}
-

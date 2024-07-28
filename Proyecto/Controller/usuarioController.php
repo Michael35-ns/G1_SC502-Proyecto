@@ -204,7 +204,7 @@
     if(isset($_POST["btnCerrarSesion"]))
     {
         session_destroy();
-        header("location: ../View/Registro-Inicio/login.php");
+        header("location: /Proyecto/View/Registro-Inicio/login.php");
     }
 
     if(isset($_POST["btnCambiarEstadoUsuario"]))

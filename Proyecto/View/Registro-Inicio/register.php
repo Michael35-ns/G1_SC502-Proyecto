@@ -1,8 +1,16 @@
-<?php include_once '../layout.php';
-include_once '../../Controller/usuarioController.php'; ?>
+<?php include_once '../../Controller/usuarioController.php';?>
 <!DOCTYPE html>
 <html lang="en">
-  <?php  HeadCSS(); ?>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Registro</title>
+  <link rel="stylesheet" href="../vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="../vendors/base/vendor.bundle.base.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/arenal.css">
+  <link rel="shortcut icon" href="../images/AFIcon.png" />
+</head>
 <body>
   <div class="container-scroller background-arenal">
     <div class="container-fluid page-body-wrapper full-page-wrapper background-arenal">
@@ -14,8 +22,8 @@ include_once '../../Controller/usuarioController.php'; ?>
                 <div class="brand-logo">
                   <img src="../images/AFLogoBlanco.svg" alt="logo">
                 </div>
-                <h4 class="text-white text-white" >Registrese, es gratis!</h4>
-                <h6 class=" text-white font-weight-light text-white" >Complete el formulario</h6>
+                <h4 class="letra-blanca">Registrese, es gratis!</h4>
+                <h6 class="font-weight-light letra-blanca">Complete el formulario</h6>
                 <br />
                 <?php
                     if(isset($_POST["msj"]))
@@ -28,6 +36,7 @@ include_once '../../Controller/usuarioController.php'; ?>
                     <input type="text" class="form-control form-control-lg" id="txtNombre" 
                      name="txtNombre" placeholder="Ingrese su nombre">
                   </div>
+
                   <div class="form-group">
                     <input type="text" class="form-control form-control-lg" id="txtUsername" 
                      name="txtUsername" placeholder="Ingrese su nombre de usuario">
@@ -42,10 +51,10 @@ include_once '../../Controller/usuarioController.php'; ?>
                   </div>  
                   <div class="mt-3">
                     <button type="submit" id="btnRegistrarUsuario"  name="btnRegistrarUsuario" 
-                    class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">Registrarse</button>
+                    class="btn btn-inverse-success btn-lg font-weight-medium btn-rounded auth-form-btn">Registrarse</button>
                   </div>
-                  <div class="text-center mt-4 text-light" >
-                    ¿Ya tiene una cuenta? <a href="login.php" class="text-success" >Inicie sesión</a>
+                  <div class="text-center mt-4 font-weight-light letra-blanca">
+                    ¿Ya tiene una cuenta? <a href="login.php" class="text-primary">Inicie sesión</a>
                   </div>
                 </form>
               </div>

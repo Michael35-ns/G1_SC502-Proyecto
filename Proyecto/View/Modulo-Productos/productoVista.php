@@ -1,10 +1,11 @@
 <?php include_once '../layout.php';
 include_once '../../Controller/productoController.php'; 
-include_once '../../Controller/categoriaController.php'; 
 include_once '../../Controller/usuarioController.php'; 
-$datos = ConsultarUsuario($_SESSION["IdUsuario"]);?>
+
+?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -18,11 +19,10 @@ $datos = ConsultarUsuario($_SESSION["IdUsuario"]);?>
 </head>
 
 <body>
-  <?php superior(); ?>
-<?php VerCategoriasCard(); ?>
-
-
-  <?php bajo(); ?>
+  <?php superior(); 
+        $datos = ConsultarProductos($_GET["q"]);
+        bajo(); 
+   ?>
 
   <script src="../vendors/base/vendor.bundle.base.js"></script>
   <script src="../js/template.js"></script>
@@ -34,6 +34,12 @@ $datos = ConsultarUsuario($_SESSION["IdUsuario"]);?>
   <script src="../js/jquery.cookie.js" type="text/javascript"></script>
   <script src="../js/dashboard.js"></script>
   <script src="../js/rutinas.js"></script>
+  <script>
+    document.getElementById('add-product-submit').addEventListener('click', function(event) {
+      event.preventDefault();
+      document.getElementById('add-product-form').submit();
+    });
+  </script>
 </body>
 
 </html>

@@ -1,19 +1,33 @@
-<?php 
+<?php
 ob_start();
 include_once '../layout.php';
 include_once '../../Controller/productoController.php';
-include_once '../../Controller/categoriaController.php'; 
+include_once '../../Controller/categoriaController.php';
+include_once '../../Controller/usuarioController.php'; 
 $opcionesCategorias = ObtenerOpcionesCategorias();
 $opcionesMaterial = ObtenerOpcionesMaterial();
 ob_end_flush();
+$datos = ConsultarUsuario($_SESSION["IdUsuario"]);
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<?php HeadCSS(); ?>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Tienda</title>
+    <link rel="stylesheet" href="../vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../vendors/base/vendor.bundle.base.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/arenal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="shortcut icon" href="../images/log.png" />
+    <link rel="shortcut icon" href="../images/AFIcon.png" />
+</head>
 
 <body>
 
-    <?php superiorProductos(); ?>
+    <?php superior(); ?>
     <div class="container-fluid page-body-wrapper" style="height: 100vh; display: flex; justify-content: center; align-items: center;">
         <div class="main-panel" style="max-width: 500px; margin: 0 auto;">
             <div class="content-wrapper">
@@ -37,14 +51,14 @@ ob_end_flush();
                                         <input type="text" name="txtUrl" class="form-control" id="exampleInputEmail1" placeholder="Ingrese el precio del producto">
                                     </div>
                                     <div class="form-group">
-                                            <label class="text-dark font-weight-bold">Categoria del producto</label>
-                                            <select id="cboCategoria" name="cboCategoria" class="form-control" required>
+                                        <label class="text-dark font-weight-bold">Categoria del producto</label>
+                                        <select id="cboCategoria" name="cboCategoria" class="form-control" required>
                                             <?php echo $opcionesCategorias; ?>
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                            <label class="text-dark font-weight-bold">Material del producto</label>
-                                            <select id="cboMaterial" name="cboMaterial" class="form-control" required>
+                                        <label class="text-dark font-weight-bold">Material del producto</label>
+                                        <select id="cboMaterial" name="cboMaterial" class="form-control" required>
                                             <?php echo $opcionesMaterial; ?>
                                         </select>
                                     </div>
@@ -61,6 +75,10 @@ ob_end_flush();
             </div>
         </div>
     </div>
+    <br />
+    <br />
+    <br />
+
     <?php bajo(); ?>
 
     <script src="../vendors/base/vendor.bundle.base.js"></script>

@@ -56,6 +56,12 @@ function superior()
                 </a>
               </li>
               <li class="nav-item">
+                <a class="nav-link" href="/Proyecto/View/Modulo-Productos/proveedores.php">
+                  <i class="mdi mdi-truck menu-icon"></i>
+                  <span class="menu-title">Proveedores</span>
+                </a>
+              </li>
+              <li class="nav-item">
                   <a href="#" class="nav-link">
                     <i class="mdi mdi-brush menu-icon"></i>
                     <span class="menu-title">Cotizar</span>

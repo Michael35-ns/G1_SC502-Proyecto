@@ -98,3 +98,4 @@ if (isset($_POST["btnEditarProducto"])) {
         header("Location: ../Modulo-Productos/productos.php");
         exit();
     }
+}

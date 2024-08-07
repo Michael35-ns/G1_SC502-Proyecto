@@ -7,7 +7,6 @@ echo '<style>' . $css . '</style>';
 function ConsultarProductos($idCategoria)
 {
     $respuesta = ProductosXCategoria($idCategoria);
-
     echo '<a href="agregarProducto.php">
             <button type="submit" id="btnRegistrarUsuario" name="btnIniciarSesion" class="btn btn-block btn-outline-primary btn-md font-weight-bold auth-form-btn">
                 Agregar producto
@@ -17,7 +16,6 @@ function ConsultarProductos($idCategoria)
     if ($respuesta->num_rows > 0) {
         echo'<br/>';
         echo '<div class="row">';
-      
         while ($row = mysqli_fetch_array($respuesta)) {
             echo '<div class="col-md-3 mb-3">'; 
             echo '<div class="card h-100">'; 
@@ -31,11 +29,11 @@ function ConsultarProductos($idCategoria)
             echo '<a href="editarProducto.php?q=' . $row["id_producto"] . '" class="btn btn-outline-dark mx-1">
                     <i class="mdi mdi-table-edit"></i>
                   </a>';
-            echo '<a href="#" class="btn btn-outline-primary mx-1">
+            echo '<a href="actualizarUsuario.php" class="btn btn-outline-primary mx-1">
                     <i class="mdi mdi-cart"></i>
                   </a>';
-            echo '<a href="#" class="btn btn-outline-danger mx-1">
-                    <i class="mdi mdi-delete-sweep"></i>
+            echo '<a href="actualizarUsuario.php" class="btn btn-outline-danger mx-1">
+                    <i class="mdi mdi-delete"></i>
                   </a>';
             echo '</div>'; 
             echo '</div>'; 

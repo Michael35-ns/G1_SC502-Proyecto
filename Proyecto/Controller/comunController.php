@@ -1,6 +1,6 @@
 <?php
 
-function EnviarCorreo($asunto,$contenido,$destinatario)
+/*function EnviarCorreo($asunto,$contenido,$destinatario)
 {
     require 'PHPMailer/src/PHPMailer.php';
     require 'PHPMailer/src/SMTP.php';
@@ -26,7 +26,7 @@ function EnviarCorreo($asunto,$contenido,$destinatario)
     $mail -> AddAddress($destinatario);
 
     $mail -> send();
-}
+}*/
 
 function generarToken($lenght = 32)
 {

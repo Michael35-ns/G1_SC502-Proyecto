@@ -1,24 +1,25 @@
-<?php 
+<?php
 ob_start();
 include_once '../layout.php';
 include_once '../../Controller/productoController.php';
-include_once '../../Controller/categoriaController.php'; 
+include_once '../../Controller/categoriaController.php';
 $datos = ConsultarProducto($_GET["q"]);
 $opcionesCategorias = ObtenerOpcionesCategorias();
 $opcionesMaterial = ObtenerOpcionesMaterial();
-ob_end_flush();?>
+ob_end_flush(); ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Tienda</title>
-  <link rel="stylesheet" href="../vendors/mdi/css/materialdesignicons.min.css">
-  <link rel="stylesheet" href="../vendors/base/vendor.bundle.base.css">
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/arenal.css">
-  <link rel="shortcut icon" href="../images/AFIcon.png" />
-  <link rel="stylesheet" href="../https://cdn.datatables.net/2.0.8/css/dataTables.bootstrap4.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Tienda</title>
+    <link rel="stylesheet" href="../vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../vendors/base/vendor.bundle.base.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/arenal.css">
+    <link rel="shortcut icon" href="../images/AFIcon.png" />
+    <link rel="stylesheet" href="../https://cdn.datatables.net/2.0.8/css/dataTables.bootstrap4.css">
 </head>
 
 <body>
@@ -34,7 +35,7 @@ ob_end_flush();?>
                                 <h2 class="heading text-danger  text-center font-weight-bold">Editar Productos</h2>
                                 <br />
                                 <form class="forms-sample" action="" method="post">
-                                <input id="txtIdProducto" name="txtIdProducto" type="hidden" value="<?php echo $datos["id_producto"] ?>">
+                                    <input id="txtIdProducto" name="txtIdProducto" type="hidden" value="<?php echo $datos["id_producto"] ?>">
                                     <div class="form-group">
                                         <label class="text-dark font-weight-bold">Nombre del producto</label>
                                         <input type="text" class="form-control" name="txtNombreProducto" value="<?php echo $datos["nombre_producto"] ?>">
@@ -48,14 +49,14 @@ ob_end_flush();?>
                                         <input type="text" name="txtUrl" class="form-control" id="txtUrl" value="<?php echo $datos["url_img"] ?>">
                                     </div>
                                     <div class="form-group">
-                                            <label class="text-dark font-weight-bold">Categoria del producto</label>
-                                            <select id="selectCategoria" name="cboCategoria" class="form-control" required>
+                                        <label class="text-dark font-weight-bold">Categoria del producto</label>
+                                        <select id="selectCategoria" name="cboCategoria" class="form-control" required>
                                             <?php echo $opcionesCategorias; ?>
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                            <label class="text-dark font-weight-bold">Categoria del producto</label>
-                                            <select id="selectCategoria" name="cboMaterial" class="form-control" required>
+                                        <label class="text-dark font-weight-bold">Categoria del producto</label>
+                                        <select id="selectCategoria" name="cboMaterial" class="form-control" required>
                                             <?php echo $opcionesMaterial; ?>
                                         </select>
                                     </div>
@@ -63,6 +64,11 @@ ob_end_flush();?>
                                         <label class="text-dark font-weight-bold">Existencias producto</label>
                                         <input type="number" name="txtExistencias" class="form-control" id="exampleInputEmail1" placeholder="Ingrese las existencias del producto">
                                     </div>
+                                    <div class="form-group d-flex align-items-center">
+                                        <label for="cboFavorito" class="text-dark font-weight-bold mb-0 mr-2">Favorito</label>
+                                        <input class="" type="checkbox" name="cboFavorito" id="cboFavorito" value="1" />
+                                    </div>
+
                                     <button name="btnEditarProducto" type="submit" class="btn btn-inverse-primary me-2">Submit</button>
                                 </form>
                             </div>

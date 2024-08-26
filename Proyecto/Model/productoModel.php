@@ -34,10 +34,10 @@
         return $respuesta;
     }
 
-    function ActualizarProducto($idProducto,$Nombre,$Precio,$img,$Categoria,$Material,$Existencias)
+    function ActualizarProducto($idProducto,$Nombre,$Precio,$img,$Categoria,$Material,$Existencias,$Favorito)
     {
         $conexion = AbrirBaseDatos();
-        $sentencia = "CALL editarProducto('$idProducto','$Nombre','$Precio','$Material','$Categoria','$img','$Existencias')";
+        $sentencia = "CALL editarProducto('$idProducto','$Nombre','$Precio','$Material','$Categoria','$img','$Existencias','$Favorito')";
         $respuesta = $conexion -> query($sentencia);
         CerrarBaseDatos($conexion);
         return $respuesta;
@@ -52,3 +52,20 @@
         return $respuesta;
     }
 
+    function CambiarEstadoProducto($idProducto)
+    {
+        $conexion = AbrirBaseDatos();
+        $sentencia = "CALL CambiarEstadoProducto('$idProducto')";
+        $respuesta = $conexion -> query($sentencia);
+        CerrarBaseDatos($conexion);
+        return $respuesta;
+    }
+
+    function verProductosFavoritos()
+    {
+        $conexion = AbrirBaseDatos();
+        $sentencia = "CALL verFavoritos()";
+        $respuesta = $conexion -> query($sentencia);
+        CerrarBaseDatos($conexion);
+        return $respuesta;
+    }

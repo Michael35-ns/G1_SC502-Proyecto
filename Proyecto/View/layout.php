@@ -1,4 +1,4 @@
-<?php
+<?php include_once 'C:/xampp/htdocs/Proyecto/Controller/carritoController.php';
 
 if (session_status() === PHP_SESSION_NONE) {
   session_start();
@@ -6,20 +6,22 @@ if (session_status() === PHP_SESSION_NONE) {
 
 function superior()
 {
+  $currentPage = $_SERVER['PHP_SELF'];
+
+
   if (!isset($_SESSION["IdUsuario"])) {
     header("location: Registro-Inicio/login.php");
   }
 
   echo '<div class="container-scroller">
 		<!-- partial:partials/_horizontal-navbar.html -->
-    <div class="horizontal-menu">
-      <nav class="navbar top-navbar col-lg-12 col-12 p-0" style="background-color: black;">
+    <div class="horizontal-menu" style="position: relative;
+    z-index: 500;">
+      <nav class="navbar top-navbar col-lg-12 col-md-12 col-sm-12 col-12 p-0" style="background-color: black;">
         <div class="container-fluid">
           <div class="navbar-menu-wrapper d-flex align-items-center justify-content-between">
-            <ul class="navbar-nav navbar-nav-left">
-            </ul>
-            <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center" >
-                <a class="navbar-brand brand-logo" href="/Proyecto/View/home.php"><img src="/Proyecto/View/images/AFLogoBlanco.svg" style="width: 120px ; heigth: 100px"  alt="logo"/></a>
+            <div class="text-center navbar-brand-wrapper-arenal d-flex align-items-center justify-content-center" >
+                <a class="navbar-brand-arenal brand-logo" href="/Proyecto/View/home.php"><img src="/Proyecto/View/images/AFLogoBlanco.svg" style="width: 130px ; heigth: 110px"  alt="logo"/></a>
             </div>
             <ul class="navbar-nav navbar-nav-right">
                 <li class="nav-item nav-profile dropdown">
@@ -40,14 +42,12 @@ function superior()
                   </div>
                 </li>
             </ul>
-            <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="horizontal-menu-toggle">
-              <span class="mdi mdi-menu"></span>
-            </button>
           </div>
         </div>
       </nav>
       <nav class="bottom-navbar navbar-blur">
-        <div class="container">
+        <div class="col-12 container">
+          <div class="row">
             <ul class="nav page-navigation">
               <li class="nav-item">
                 <a class="nav-link" href="/Proyecto/View/Modulo-Productos/productos.php">
@@ -55,6 +55,7 @@ function superior()
                   <span class="menu-title">Productos</span>
                 </a>
               </li>
+
               <li class="nav-item">
                   <a href="#" class="nav-link">
                     <i class="mdi mdi-brush menu-icon"></i>
@@ -84,13 +85,23 @@ function superior()
                   </a>
               </li>
             </ul>
+          </div>
+            <div class="row">
+                ';
+                  
+                        ConsultarResumenCarrito($currentPage);
+                  
+                echo '
+            </div>
         </div>
       </nav>
     </div>
+    
+
     <!-- partial -->
 		<div>
 			<div class="main-panel">
-				<div class="content-wrapper">
+				<div class="content-wrapper" style="padding: 30px">
 					<div class="row">
 						<div class="col-sm-6">
 							<div class="d-flex align-items-center justify-content-md-end">
@@ -182,6 +193,8 @@ function inferior()
 <?php
 function bajo()
 {
+  echo '<br/> <br/> <br/>';
+
   echo ' <footer class="footer">
           <div class="footer-wrap">
             <div class="d-sm-flex justify-content-center justify-content-sm-between">

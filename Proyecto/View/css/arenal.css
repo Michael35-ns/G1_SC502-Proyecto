@@ -204,6 +204,126 @@ display: block !important;
 
 .card-img-top {
   width: 100%;
-  height: 250px; /* Establecer una altura fija */
-  object-fit: cover; /* Ajustar la imagen sin distorsionar */
+  height: 350px; /* Establecer una altura fija */
+ /* Ajustar la imagen sin distorsionar */
 }
+
+.bg-purple {
+  background-color: #6f42c1; /* Color morado Bootstrap */
+  color: white; /* Texto en blanco para mejor contraste */
+}
+.card-transparent {
+  background-color: rgba(111, 66, 193, 0.7); /* Fondo morado con 70% de opacidad */
+  color: white; /* Texto blanco para mejor contraste */
+}
+.card-header-transparent {
+  background-color: rgba(111, 66, 193, 0.9); /* Fondo morado más oscuro para la cabecera */
+}
+
+/* Styles for the card container */
+.card-container-arenal {
+  display: flex;
+  flex-wrap: wrap; /* Allow cards to wrap to the next line */
+  gap: 15px; /* Adds space between cards */
+}
+
+/* Styles for individual cards */
+.my-card-arenal {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  width: 250px; /* Adjust width as needed */
+  height: 400px; /* Adjust height as needed */
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.6s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+
+/* Ensure the link takes up the full area of the card */
+.my-card-arenal a {
+  display: flex; /* Make the link a flex container */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none; /* Remove underline from link */
+  color: inherit; /* Inherit color from parent */
+  width: 100%;
+  height: 100%;
+  padding: 15px; /* Adjust padding if needed */
+}
+
+/* Hover effect for the card */
+.my-card-arenal:hover {
+  transform: translateY(-10px); /* Moves the card 10px upwards */
+}
+
+/* Styles for icons within category items */
+.category-item i {
+  font-size: 50px;
+  color: #6c757d;
+  margin-bottom: 20px;
+}
+
+/* Styles for category titles */
+.category-title {
+  font-size: 1.2rem;
+  color: #343a40;
+  text-align: center;
+}
+
+
+.category-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrar íconos y texto verticalmente */
+}
+
+.category-item i {
+  font-size: 48px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.category-title {
+  font-size: 18px;
+  margin-top: 10px; /* Asegura espacio suficiente entre el icono y el título */
+}
+
+.navbar-brand-wrapper-arenal {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.navbar-brand-arenal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px; /* Ajusta según el tamaño de tu logo */
+}
+
+.navbar-brand-arenal img {
+  max-width: 100%;
+  height: auto;
+}
+
+.content-wrapper-arenal {
+  padding: 30px;
+  width: 100%;
+  padding-right: var(--bs-gutter-x, 0.75rem);
+  padding-left: var(--bs-gutter-x, 0.75rem);
+  margin-right: auto;
+  margin-left: auto;
+  min-height: calc(100vh - 156px - 75px);
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+}
+
+

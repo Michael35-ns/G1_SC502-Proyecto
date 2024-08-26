@@ -227,5 +227,10 @@
             header("location: /Proyecto/View/home.php");
         }
     }
+    function ValidarRol(){
+        if($_SESSION["RolUsuario"] == 1) {
+            return true;
+        }
+    }
 
 ?>

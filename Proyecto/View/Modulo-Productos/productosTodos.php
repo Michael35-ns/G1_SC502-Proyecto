@@ -27,7 +27,7 @@ include_once '../../Controller/productoController.php'; ?>
                         </tr>
                     </thead>
                     <tbody>
-                    <?php VistaProductos(); ?>
+
                     </tbody>
                 </table>
     <?php bajo(); ?>

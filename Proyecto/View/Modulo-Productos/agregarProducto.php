@@ -3,7 +3,7 @@ ob_start();
 include_once '../layout.php';
 include_once '../../Controller/productoController.php';
 include_once '../../Controller/categoriaController.php';
-include_once '../../Controller/usuarioController.php'; 
+include_once '../../Controller/usuarioController.php';
 $opcionesCategorias = ObtenerOpcionesCategorias();
 $opcionesMaterial = ObtenerOpcionesMaterial();
 ob_end_flush();
@@ -37,7 +37,7 @@ $datos = ConsultarUsuario($_SESSION["IdUsuario"]);
                             <div class="card-body">
                                 <h2 class="heading text-danger  text-center font-weight-bold">Agregar Productos</h2>
                                 <br />
-                                <form class="forms-sample" action="" method="post">
+                                <form class="forms-sample" action="" method="post" enctype="multipart/form-data">
                                     <div class="form-group">
                                         <label class="text-dark font-weight-bold">Nombre del producto</label>
                                         <input type="text" class="form-control" name="txtNombreProducto" placeholder="Ingrese el nombre del producto">
@@ -48,7 +48,13 @@ $datos = ConsultarUsuario($_SESSION["IdUsuario"]);
                                     </div>
                                     <div class="form-group">
                                         <label class="text-dark font-weight-bold">Imagen del producto</label>
-                                        <input type="text" name="txtUrl" class="form-control" id="exampleInputEmail1" placeholder="Ingrese el precio del producto">
+                                        <input type="file" name="txtUrl" class="form-control" id="exampleInputEmail1" 
+                                        placeholder="Imagen" required value="" accept="image/png, image/jpg, image/jpeg">
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">
+                                                <span class="fas fa-camera"></span>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="text-dark font-weight-bold">Categoria del producto</label>

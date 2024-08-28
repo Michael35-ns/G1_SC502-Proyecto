@@ -17,7 +17,6 @@ $datos = ConsultarUsuario($_SESSION["IdUsuario"]);
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/arenal.css">
   <link rel="shortcut icon" href="../images/AFIcon.png" />
-  <link rel="stylesheet" href="../https://cdn.datatables.net/2.0.8/css/dataTables.bootstrap4.css">
     <style>
         .card-product {
             position: relative;
@@ -118,8 +117,11 @@ $datos = ConsultarUsuario($_SESSION["IdUsuario"]);
         }
     ?>
 
-        
+    <?php RealizarPagoCarrito(); ?>
+
+
     <?php
+    /*
         if ($_SESSION["Total"] != "0") {
             // Formatea el total
             $subtotal = number_format($_SESSION["SubTotal"], 2);
@@ -156,7 +158,7 @@ $datos = ConsultarUsuario($_SESSION["IdUsuario"]);
                     </div>
                 </div>
             ';
-        }
+        }*/
     ?>
 
 
@@ -175,8 +177,11 @@ $datos = ConsultarUsuario($_SESSION["IdUsuario"]);
                         ¿Desea eliminar el producto <label id="lblNombreProducto"></label> de su carrito?
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary" id="btnEliminarProductoCarrito"
+                        <button type="submit" class="btn btn-inverse-info btn-md font-weight-medium btn-rounded" id="btnEliminarProductoCarrito"
                             name="btnEliminarProductoCarrito">Procesar</button>
+                            <button type="button" class="btn btn-inverse-danger btn-md font-weight-medium btn-rounded" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">Cancelar</span>
+                        </button>
                     </div>
                 </form>
             </div>
@@ -195,9 +200,11 @@ $datos = ConsultarUsuario($_SESSION["IdUsuario"]);
     <script src="../vendors/justgage/justgage.js"></script><!----- Listo ------>
     <script src="../js/jquery.cookie.js" type="text/javascript"></script>
     <script src="../js/dashboard.js"></script>
+    <script src="../js/pago.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
     <script src="https://cdn.datatables.net/2.0.8/js/dataTables.bootstrap4.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.all.min.js"></script>
   <script>
 
         $(document).on("click", ".AbrirModal", function() {

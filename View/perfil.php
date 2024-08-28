@@ -21,6 +21,11 @@
 		<?php 
 		superior()
 		?>
+    <div class="row">
+
+    <div class="col-1">
+    </div>
+    <div class="col-10 grid-margin stretch-card">
         <div class="card bg-white mt-5 mb-5 navbar-blur2">
           <div class="card-body">
             <div class="p-3 py-5">
@@ -43,7 +48,7 @@
             </div>
           </div>
         </div>
-
+        </div></div>
 		<?php 
 		bajo()
 		?>

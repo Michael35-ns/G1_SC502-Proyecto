@@ -89,7 +89,7 @@ if(isset($_POST["btnCambiarEstadoProducto"]))
 function VistaFavoritos()
 {
     $respuesta = verProductosFavoritos();
-
+    $estado = 'fuck';
     if ($respuesta->num_rows > 0) {
         echo '<br/>';
         echo '<div class="row">';
@@ -100,6 +100,7 @@ function VistaFavoritos()
             echo '<div class="card-body" style= "height: 100px">';
             echo '<h6 class="card-title">' . $row["nombre_producto"] . '</h6>';
             echo '<p class="card-text">Precio: ₡ ' . number_format($row["precio"], 0, ',', '.') . '</p>';
+
             echo '</div>';
             echo '</div>';
             echo '</div>';
@@ -124,7 +125,7 @@ if (isset($_POST["btnAgregarProducto"])) {
     $Material = $_POST["cboMaterial"];
     $Existencias = $_POST["txtExistencias"];
 
-    $img = '../View/img/' . $_FILES["txtUrl"]["name"];
+    $img = '../../View/img/' . $_FILES["txtUrl"]["name"];
 
     $origen = $_FILES["txtUrl"]["tmp_name"];
     $destino = __DIR__ . '/../View/img/' . $_FILES["txtUrl"]["name"];

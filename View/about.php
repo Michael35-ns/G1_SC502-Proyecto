@@ -1,9 +1,9 @@
-<?php include_once 'layout.php'; ?>
+<?php include_once 'layout.php'; 
+ include_once '../Controller/usuarioController.php'; ?>
+ 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <script src="js/color-modes.js"></script>
-
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Tienda</title>
@@ -11,15 +11,8 @@
     <link rel="stylesheet" href="vendors/base/vendor.bundle.base.css">
     <link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/arenal.css">
-    <link rel="shortcut icon" href="images/favicon.png" />
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
-
-    
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
-
-<link href="css/bootstrap.min.css" rel="stylesheet">
-
+    <link rel="shortcut icon" href="images/AFIcon.png" />
+    <link rel="shortcut icon" href="images/log.png" />
   </head>
   
   <body>  
@@ -27,7 +20,8 @@
 <?php 
 		superior()
 		?>  
-<div class="fuse-bottom">
+  
+  <div class="fuse-bottom">
       <img src="images/about/VideoCapture_20240405-150619.jpg" class="img-fluid" alt="Descripción de la imagen">
     </div><!-- /.row -->
   <div class="container marketing">
@@ -91,5 +85,9 @@
 		<script src="vendors/justgage/justgage.js"></script><!----- Listo ------>
     <script src="js/jquery.cookie.js" type="text/javascript"></script>
     <script src="js/dashboard.js"></script>
+    <script src="js/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="js/modernizr.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/script.js"></script> 
   </body>
 </html>

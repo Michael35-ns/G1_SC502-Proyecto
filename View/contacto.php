@@ -9,7 +9,22 @@
     <link rel="stylesheet" href="vendors/base/vendor.bundle.base.css">
     <link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/arenal.css">
-    <link rel="shortcut icon" href="images/favicon.png" />
+    
+    <link rel="shortcut icon" href="images/AFIcon.png" />
+    <link rel="shortcut icon" href="images/log.png" />
+    <style>
+      .btn {
+        display: flex;
+        align-items: center; /* Centra verticalmente el texto y el icono */
+        justify-content: center; /* Centra horizontalmente el texto y el icono */
+        gap: 8px; /* Espacio entre el texto y el icono, ajusta según sea necesario */
+        text-decoration: none; /* Elimina el subrayado del enlace */
+      }
+
+      .mdi-whatsapp {
+        font-size: 24px; /* Tamaño del icono */
+      }
+    </style>
   </head>
   <body>
 
@@ -18,21 +33,18 @@
 		superior()
 		?>
 <div class="container mt-4 mb-4 p-3 d-flex justify-content-center"> 
-  <div class="card p-4"> <div class=" image d-flex flex-column justify-content-center align-items-center"> 
-    <button class="btn btn-secondary"> <img src="https://i.imgur.com/wvxPV9S.png" height="100" width="100"/>
+  <div class="card p-4 navbar-blur2"> <div class=" image d-flex flex-column justify-content-center align-items-center"> 
+    <button class="btn btn-secondary"> <img src="/Proyecto/View/images/ArenalFramesLogo.svg" height="110" width="110"/>
     </button>
-    <span class="name mt-3">Eleanor Pena</span> 
-    <span class="idd">@eleanorpena</span> 
-  <div class="d-flex flex-row justify-content-center align-items-center gap-2"> 
-    <span class="idd1">Oxc4c16a645_b21a</span> 
-    <span><i class="fa fa-copy"></i></span> 
+    <span class="name mt-3">Arenal Frames S.A.</span> 
+  <div class="d-flex flex-row justify-content-center align-items-center gap-2">
   </div> 
   <div class="d-flex flex-row justify-content-center align-items-center mt-3">
-     <span class="number">1069<span class="follow">Followers</span></span> 
+     <span class="follow"><a href="mailto:arenal.framescr@outlook.com">arenal.framescr@outlook.com</a></span>
   </div>
 
   <div class="text mt-3"> 
-    <span>Eleanor Pena is a creator of minimalistic x bold graphics and digital artwork.<br><br> Artist/ Creative Director by Day #NFT minting@ with FND night.</span> 
+    <span>Arenal Frames es un proyecto que busca hacerse con el mercado de corte láser y diseño en 3D<br></span> 
   </div> 
   <div class="gap-3 mt-3 icons d-flex flex-row justify-content-center align-items-center"> 
     <span><i class="fa fa-twitter"></i></span> 
@@ -40,9 +52,10 @@
     <span><i class="fa fa-instagram"></i></span> 
     <span><i class="fa fa-linkedin"></i></span> 
   </div> 
-  <div class=" px-2 rounded mt-4 date "> 
-    <span class="join">Joined May,2021</span> 
-  </div> 
+  <br>
+  <a class="btn btn-inverse-success btn-rounded btn-fw" href="https://wa.me/50660017174" target="_blank">Contactenos por whatsapp
+  <i class="mdi mdi-whatsapp mdi-24px"></i>
+</a>
 </div> 
 </div>
 </div>

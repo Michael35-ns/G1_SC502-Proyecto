@@ -1,7 +1,12 @@
 <?php include_once '../layout.php';
-include_once '../../Controller/usuarioController.php'; ?>
-<?php ValidarAdmin(); ?>
-
+include_once '../../Controller/usuarioController.php';
+include_once '../../Controller/carritoController.php';
+include_once '../../Controller/facturaController.php';
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+$q = isset($_GET['q']) ? htmlspecialchars($_GET['q']) : '';
+?>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -26,23 +31,32 @@ include_once '../../Controller/usuarioController.php'; ?>
     ?>
     <div class="card navbar-blur2">
         <div class="card-body">
-            <h2 class="card-title">Consulta de Usuarios</h2>
+            <h1 class="card-title text-primary">Consulta de Facturas</h1>
+            
+            <div>
+                <a href="../../Controller/reporteController.php?q=<?php echo htmlspecialchars($q); ?>" target="_blank" class="btn btn-primary">Generar Reporte</a>
+            </div>
 
-            <div class="row">
-                <table id="tablaUsuarios" class="table table-hover">
+            <br />
+            <div class="row d-flex justify-content-center">
+                <table id="tablaFacturas" class="table table-hover table-bordered">
                     <thead>
-                        <tr>
-                            <th>Nombre</th>
-                            <th>Correo</th>
-                            <th>Estado</th>
-                            <th>Rol</th>
-                            <th>Acciones</th>
-                            <th>Acciones</th>
+                        <tr class="text-dark text-center">
+                            <th class="text-center"><strong>Nombre</strong></th>
+                            <th class="text-center"><strong>Cantidad Comprada</strong></th>
+                            <th class="text-center"><strong>Total Factura</strong></th>
+                            <th class="text-center"><strong>Fecha</strong></th>
+                            <th class="text-center"><strong>Información</strong></th>
+
                         </tr>
                     </thead>
                     <tbody>
                         <?php
-                        ConsultarUsuarios();
+                        if ($_SESSION["RolUsuario"] == 2) {
+                            VerFacturasDB($_SESSION["IdUsuario"]);
+                        } else {
+                            VerFacturasDB($_GET["q"]);
+                        }
                         ?>
                     </tbody>
                 </table>
@@ -55,28 +69,6 @@ include_once '../../Controller/usuarioController.php'; ?>
     bajo()
     ?>
 
-    <div class="modal fade" id="ModalUsuarios" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content navbar-blur2" style="width:600px;">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Confirmación</h5>
-                </div>
-
-                <form action="" method="POST">
-                    <div class="modal-body">
-                        <input type="hidden" id="IdUsuario" name="IdUsuario">
-                        ¿Desea cambiar el estado del usuario <label id="lblNombre"></label> ?
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-inverse-info btn-md font-weight-medium btn-rounded" id="btnCambiarEstadoUsuario" name="btnCambiarEstadoUsuario">Procesar</button>
-                        <button type="button" class="btn btn-inverse-danger btn-md font-weight-medium btn-rounded" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">Cancelar</span>
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
 
     <script src="../vendors/base/vendor.bundle.base.js"></script> <!----- Listo ------>
     <script src="../js/template.js"></script><!----- Listo ------>
@@ -91,16 +83,15 @@ include_once '../../Controller/usuarioController.php'; ?>
     <script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
     <script src="https://cdn.datatables.net/2.0.8/js/dataTables.bootstrap4.js"></script>
     <script>
-        $(document).on("click", ".AbrirModal", function() {
-            $("#lblNombre").text($(this).attr('data-name'));
-            $("#IdUsuario").val($(this).attr('data-id'));
-        });
-
         $(document).ready(function() {
-            $("#tablaUsuarios").DataTable({
+            $("#tablaFacturas").DataTable({
                 language: {
                     url: '../vendors/language.json'
-                }
+                },
+                columnDefs: [{
+                    type: 'string',
+                    target: [0, 1, 2, 3, 4]
+                }]
             });
         });
     </script>

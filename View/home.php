@@ -52,10 +52,17 @@
                         </div>
                         </div>';
     }
+    else{
+      echo '<div class="card-container-arenal">
+      <div class="my-card-arenal">
+                <a href="/Proyecto/View/Modulo-Facturas/listaFacturas.php" class="nav-link navbar-blur2 category-item">
+              <i class="mdi mdi-file-multiple menu-icon icon-lg"></i>
+              <h3 class="category-title">Compras </h3>
+            </a>
+            </div>
+            </div>';
+    }
   ?>
-
-
-
 
   
 		

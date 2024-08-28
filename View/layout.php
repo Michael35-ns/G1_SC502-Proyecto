@@ -57,7 +57,7 @@ function superior()
               </li>
 
               <li class="nav-item">
-                  <a href="#" class="nav-link">
+                  <a href="/Proyecto/View/cotizar.php" class="nav-link">
                     <i class="mdi mdi-brush menu-icon"></i>
                     <span class="menu-title">Cotizar</span>
                     <i class="menu-arrow"></i>
